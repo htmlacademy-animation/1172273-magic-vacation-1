@@ -91,6 +91,7 @@
 }
 
 .slider__item-text {
+  opacity: 0;
   margin-top: 3.6rem;
   margin-bottom: 0;
   max-width: 34rem;
@@ -122,6 +123,39 @@
     min-height: 14rem;
     font-size: 1.4rem;
     line-height: 1.5rem;
+  }
+}
+
+.swiper-slide-active,
+.swiper-slide-next {
+  .slider__item-text {
+    animation-name: FadeSlideIn;
+    animation-timing-function: ease;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.swiper-slide-next {
+  .slider__item-text {
+    animation-delay: 0.3s;
+
+    @media (max-width: $tablet) {
+      animation: none;
+      animation-delay: 0s;
+    }
+  }
+}
+
+@keyframes FadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 

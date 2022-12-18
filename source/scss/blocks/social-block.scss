@@ -6,6 +6,20 @@
       opacity: 1;
       pointer-events: auto;
     }
+    .social-block__link--fb {
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+
+    .social-block__link--insta {
+      opacity: 1;
+      transition: all 1s ease;
+    }
+
+    .social-block__link--vk {
+      opacity: 1;
+      transition: all 2s ease;
+    }
   }
 }
 
@@ -89,6 +103,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: all 0.3s ease;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -168,6 +183,8 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 
   @media (min-width: $stop-scaling) {
     width: 40px;

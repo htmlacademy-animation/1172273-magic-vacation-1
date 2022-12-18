@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .form__label {
@@ -43,6 +44,10 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  flex-grow: 1;
+  animation-name: fadeFormFieldIn;
+  animation-timing-function: ease;
+  animation-duration: 1s;
 
   &:focus {
     border: 1px solid $c-purple;
@@ -75,6 +80,18 @@
     width: calc(100% - 5rem);
     height: 4rem;
     font-size: 1.6rem;
+  }
+}
+
+@keyframes fadeFormFieldIn {
+  from {
+    width: 0;
+    margin-left: calc(100% - 21rem);
+  }
+
+  to {
+    width: calc(100% - 21rem);
+    margin-left: 0;
   }
 }
 
@@ -122,6 +139,10 @@
     @media (max-width: $tablet) and (orientation: landscape) {
       display: block;
     }
+  }
+
+  &:before {
+    width: 100%;
   }
 }
 
